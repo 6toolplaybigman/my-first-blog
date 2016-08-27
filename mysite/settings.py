@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    #0827추가
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog'
+#    'marcador'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,3 +109,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#0827추가
+'''
+STATIC_ROOT = 'staticfiles'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+LOGIN_URL = 'mysite_login'
+LOGOUT_URL = 'mysite_logout'
+LOGIN_REDIRECT_URL = 'marcador_bookmark_list'
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+'''
